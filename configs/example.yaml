@@ -1,0 +1,17 @@
+backend: accelerate
+output_dir: evals_out
+max_samples: 2
+model:
+  name: openai-community/gpt2
+  dtype: float32
+  use_chat_template: false
+task:
+  name: qa_em
+  fewshot_k: 0
+  allow_truncate: false
+data:
+  source:
+    type: jsonl
+    path: data/examples/my_qa_dev.jsonl
+    input_col: question
+    target_col: answer

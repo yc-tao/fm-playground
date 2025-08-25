@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61", "wheel", "poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "myeval"
+version = "0.1.0"
+description = "Thin wrapper around Lighteval for simple LLM evaluations"
+authors = [{name="Your Name", email="you@example.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate>=0.24",
+    "transformers>=4.37",
+    "datasets>=2.14",
+    "pydantic>=1.10",
+    "pyyaml>=6.0",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "lighteval>=0.6",
+]
+
+[project.optional-dependencies]
+vllm = ["vllm>=0.2.6"]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+myeval = "myeval.cli:main"
+
+[tool.poetry]
+packages = [{include = "myeval", from = "src"}]
