@@ -23,6 +23,7 @@ dependencies = [
 
 [project.optional-dependencies]
 vllm = ["vllm>=0.2.6"]
+test = ["pytest>=7.0"]
 
 [project.scripts]
 myeval = "myeval.cli:main"

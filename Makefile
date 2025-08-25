@@ -1,7 +1,7 @@
 .PHONY: setup test run docker-cpu docker-cuda
 
 setup:
-pip install -e .
+pip install -e .[test]
 
 test:
 pytest -q
